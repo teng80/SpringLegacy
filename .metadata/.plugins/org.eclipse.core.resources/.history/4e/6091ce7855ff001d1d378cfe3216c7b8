@@ -1,0 +1,8 @@
+package com.lgy.spring_14_2;
+
+public class StudentInfomation {
+	private String name;
+	private String age;
+	private String gradeNum;
+	private String classNum;
+}

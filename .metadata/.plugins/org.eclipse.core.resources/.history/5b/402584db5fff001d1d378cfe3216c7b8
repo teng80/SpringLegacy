@@ -1,0 +1,8 @@
+package com.lgy.spring_15.domain;
+
+public class Snippet {
+	public static void main(String[] args) {
+		com.lgy.spring_15.domain
+	}
+}
+

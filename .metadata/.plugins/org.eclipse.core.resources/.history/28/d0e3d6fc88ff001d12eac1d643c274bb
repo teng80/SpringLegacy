@@ -1,0 +1,34 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<%-- ${pageContext.request.contextPath} => 프로젝트명 --%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"  />
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script type="text/javascript">
+private int tno;
+private String owner;
+private String grade;
+	$(function() {
+		$("#checkJson").click(function() {
+			var member={tno:"777", owner:"홍길동", grade:"337"};
+		}); //end click function
+		
+		$.ajax({
+			type:"post"
+// 			spring_15/sample/ticket
+			,url:"${contextPath}/sample/ticket"
+			,contentType:"application/json"
+			,data:JSON.stringify(member)
+		}); //end ajax 
+	}); //end function
+</script>
+</head>
+<body>
+<!-- 	ticket_test.jsp!!! -->
+	<input type="text" id="checkJson" value="회원 정보 보내기"><br>
+</body>
+</html>

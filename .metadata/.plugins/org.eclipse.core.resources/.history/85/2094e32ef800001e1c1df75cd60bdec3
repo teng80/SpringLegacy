@@ -1,0 +1,54 @@
+package com.lgy.spring_15;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.lgy.spring_15.domain.UserVO;
+
+@RestController
+public class UserController {
+	private Map<String, UserVO> userMap;
+	
+//	객체 생성후 호출(초기값 설정)
+	@PostConstruct
+	public void init() {
+		userMap = new HashMap<String, UserVO>();
+		userMap.put("1", new UserVO("1", "홍길동", "111-2222", "서울"));
+		userMap.put("2", new UserVO("2", "홍길자", "111-2223", "부산"));
+		userMap.put("3", new UserVO("3", "홍길순", "111-2224", "대구"));
+	}
+	
+	@GetMapping("/user/{id}")
+	public UserVO getUser(@PathVariable("id") String id) {
+		return userMap.get(id);
+	}
+	
+	@GetMapping("user/all")
+	public List<UserVO> getUserList(){
+		return new ArrayList<UserVO>(userMap.values());
+	}
+	
+	@PostMapping("/user/{id}")
+	public void postUser(
+			@PathVariable("id") String id, // 3 
+			@RequestParam("name") String name, // 3?name=여기는거
+			@RequestParam("phone") String phone, // &phone=적은거
+			@RequestParam("address") String address	) { // &address=적은거
+		
+		UserVO userVO = userMap(); // 3번 userMap.get(3) => UserVO("3", "홍길순", "111-2224", "대구"));
+		userVO.setId(id);
+		userVO.setName(name); // 세터로 변경  위에  ?name=여기는거
+		userVO.setPhone(phone); // .. &phone=적은거
+		userVO.setAddress(address); // .. &address=적은거
+	}
+}

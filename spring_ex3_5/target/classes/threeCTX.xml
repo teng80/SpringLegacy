@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- Three 클래스로 three 객체 생성 -->
+	<bean id="three" class="com.lgy.spring_ex3_5.Three"></bean>
+<!-- MyThree 클래스로 myThree 객체 생성 -->	
+	<bean id="myThree" class="com.lgy.spring_ex3_5.MyThree">
+<!-- 	setThree 호출 -->
+		<property name="three">
+<!-- 	위에서 만든<bean id="three" 객체임 -->
+			<ref bean="three"/>
+		</property>
+<!-- 		setNum 호출 -->
+		<property name="num" value="129"></property>
+	</bean>
+</beans>

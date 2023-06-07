@@ -1,0 +1,13 @@
+package com.lgy.spring_15.domain;
+
+public class SampleVO {
+	private int mno;
+	private String firstName;
+	private String lastName;
+
+	public SampleVO(int mno, String firstName, String lastName) {
+		this.mno = mno;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}	
+}

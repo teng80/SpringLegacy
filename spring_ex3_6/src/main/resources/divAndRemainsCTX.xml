@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+<!-- DivAndRemains 클래스로 divAndRemains 객체 생성 -->
+	<bean id="divAndRemains" class="com.lgy.spring_ex3_6.DivAndRemains"></bean>
+<!-- MyDivAndRemains 클래스로 myDivAndRemains 객체 생성 -->	
+	<bean id="myDivAndRemains" class="com.lgy.spring_ex3_6.MyDivAndRemains">
+<!-- 	setDivAndRemains 호출 -->
+		<property name="divAndRemains">
+<!-- 	위에서 만든<bean id="divAndRemains" 객체임 -->
+			<ref bean="divAndRemains"/>
+		</property>
+<!-- 		setNumber 호출 -->
+		<property name="number" value="77"></property>
+	</bean>
+</beans>

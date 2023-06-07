@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<!-- 	context:property-placeholder : 외부파일을 사용해서 설정 -->
+	<context:property-placeholder location="classpath:mssql.account, classpath:mysql.account"/>
+	
+	<bean id="dbConnection" class="com.lgy.spring_ex8_2.DbConnection">
+		<property name="mssqlId">
+<!-- 		mssql.account 에 있는 ms_student.id 값을 setter로 저장 -->
+			<value>${ms_student.id}</value>
+		</property>
+		<property name="mssqlPw">
+<!-- 		mssql.account 에 있는 ms_student.pw 값을 setter로 저장 -->
+			<value>${ms_student.pw}</value>
+		</property>
+		<property name="mysqlId">
+<!-- 		mysql.account 에 있는 my_student.id 값을 setter로 저장 -->
+			<value>${my_student.id}</value>
+		</property>
+		<property name="mysqlPw">
+<!-- 		mysql.account 에 있는 my_student.pw 값을 setter로 저장 -->
+			<value>${my_student.pw}</value>
+		</property>		
+	</bean>
+</beans>

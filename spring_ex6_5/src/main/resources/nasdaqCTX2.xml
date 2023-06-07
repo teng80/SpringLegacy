@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="nasdaq3" class="com.lgy.spring_ex6_5.Nasdaq">
+	<!--    생성자 갯수에 따라 다 해줌(필드의 매개변수 1개니깐 constructor-arg 1개만 ) -->
+		<constructor-arg value="Nvidia" />
+		<property name="capRank">
+			<value>7</value>
+		</property>
+		<property name="product">
+			<list>
+				<value>RTX 3080</value>
+				<value>RTX 2080</value>
+			</list>
+		</property>
+	</bean>
+
+</beans>

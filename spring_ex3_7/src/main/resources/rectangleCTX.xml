@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Rectangle 클래스로 rectangle 객체 생성 -->
+	<bean id="rectangle" class="com.lgy.spring_ex3_7.Rectangle"></bean>
+<!-- MyRectangle 클래스로 myRectangle 객체 생성 -->	
+	<bean id="myRectangle" class="com.lgy.spring_ex3_7.MyRectangle">
+<!-- 	setRectangle 호출 -->
+		<property name="rectangle">
+<!-- 	위에서 만든<bean id="rectangle" 객체임 -->
+			<ref bean="rectangle"/>
+		</property>
+<!-- 		setX 호출 -->
+		<property name="x" value="150"></property>
+<!-- 		setY 호출 -->
+		<property name="y" value="150"></property>
+	</bean>
+</beans>

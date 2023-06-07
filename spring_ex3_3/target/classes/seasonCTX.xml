@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- Season 클래스로 season 객체 생성 -->
+	<bean id="season" class="com.lgy.spring_ex3_3.Season"></bean>
+
+<!-- MySeason 클래스로 mySeason 객체 생성 -->	
+	<bean id="mySeason" class="com.lgy.spring_ex3_3.MySeason">
+<!-- 	season 호출 -->
+		<property name="season">
+<!-- 		<bean id="season" 객체임 -->
+			<ref bean="season"/>
+		</property>
+<!-- 		setMonth 호출 -->
+		<property name="month" value="9"></property>
+	</bean>
+</beans>

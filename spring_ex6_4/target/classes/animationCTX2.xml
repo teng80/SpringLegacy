@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="animation3" class="com.lgy.spring_ex6_4.Animation">
+	<!--    생성자 갯수에 따라 다 해줌(필드의 매개변수 1개니깐 constructor-arg 1개만 ) -->
+		<constructor-arg value="블리치"></constructor-arg>
+		<property name="year">
+				<value>2004</value>
+			</property>
+			<property name="character">
+				<list>
+					<value>이치고</value>
+					<value>오리히메</value>
+				</list>
+			</property>
+	</bean>
+</beans>

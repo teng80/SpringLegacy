@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- Won2Dollar 클래스로 won2Dollar 객체 생성 -->
+	<bean id="won2Dollar" class="com.lgy.spring_ex3_4.Won2Dollar"></bean>
+
+<!-- MyWon2Dollar 클래스로 myWon2Dollar 객체 생성 -->	
+	<bean id="myWon2Dollar" class="com.lgy.spring_ex3_4.MyWon2Dollar">
+<!-- 	setWon2Dollar 호출 -->
+		<property name="won2Dollar">
+<!-- 		<bean id="won2Dollar" 객체임 -->
+			<ref bean="won2Dollar"/>
+		</property>
+<!-- 		setWon 호출 -->
+		<property name="won" value="3600"></property>
+	</bean>
+</beans>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- Circle 클래스로 circle 객체 생성 -->
+	<bean id="circle" class="com.lgy.spring_ex3_1.Circle"></bean>
+
+<!-- MyCircle 클래스로 myCircle 객체 생성 -->	
+	<bean id="myCircle" class="com.lgy.spring_ex3_1.MyCircle">
+<!-- 	setClrcle 호출 -->
+		<property name="clrcle">
+<!-- 		<bean id="circle" 객체임 -->
+			<ref bean="circle"/>
+		</property>
+<!-- 		setRadius 호출 -->
+		<property name="radius" value="10"></property>		
+	</bean>
+</beans>

@@ -1,0 +1,22 @@
+package com.lgy.spring_15;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.web.bind.annotation.RestController;
+
+import com.lgy.spring_15.domain.UserVO;
+
+@RestController
+public class UserController {
+	private Map<String, UserVO> userMap;
+	
+//	객체 생성후 호출(초기값 설정)
+	@PostConstruct
+	public void init() {
+		new HashMap<String, UserVO>();
+		userMap.put("1", new UserVO("1", "홍길동", "111-2222", "서울"));
+	}
+}

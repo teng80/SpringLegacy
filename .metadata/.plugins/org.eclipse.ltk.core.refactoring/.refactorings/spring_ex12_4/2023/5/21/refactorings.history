@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;spring_ex12_4/src/main/webapp/WEB-INF/views/portpolio/ bookManager.jsp&apos; to &apos;bookManager.jsp&apos;" description="Rename resource &apos; bookManager.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/WEB-INF/views/portpolio/ bookManager.jsp" name="bookManager.jsp" stamp="1685083506992" updateReferences="true"/>
+</session>

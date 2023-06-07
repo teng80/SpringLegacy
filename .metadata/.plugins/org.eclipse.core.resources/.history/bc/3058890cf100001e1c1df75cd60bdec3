@@ -1,0 +1,18 @@
+package com.lgy.spring_15;
+
+import java.util.Map;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class UserController {
+	private Map<String, UserVO> userMap;
+	
+//	객체 생성후 호출(초기값 설정)
+	@PostConstruct
+	public void init() {
+		
+	}
+}
